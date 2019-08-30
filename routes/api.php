@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Estado;
+use App\State;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,11 @@ use App\Estado;
 */
 
 Route::get('states', 'StateController@index');
-Route::get('states/{states}', 'StateController@show');
+Route::get('states/{state}', 'StateController@show');
+Route::post('states', 'StateController@store');
+Route::put('states/{state}', 'StateController@update');
+Route::delete('states/{state}', 'StateController@destroy');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
