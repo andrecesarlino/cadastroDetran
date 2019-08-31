@@ -13,7 +13,6 @@ class CitiesTableDataSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\Cities');
-
         for ($i = 1; $i <= 10; $i++) {
             DB::table('cities')->insert([
                 'nome' => $faker->sentence(),
