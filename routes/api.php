@@ -28,6 +28,13 @@ Route::post('cities', 'CitiesController@store');
 Route::put('cities/{cities}', 'CitiesController@update');
 Route::delete('cities/{cities}', 'CitiesController@destroy');
 
+//Peoples
+Route::get('peoples', 'PeoplesController@index');
+Route::get('peoples/{peoples}', 'PeoplesController@show');
+Route::post('peoples', 'PeoplesController@store');
+Route::put('peoples/{peoples}', 'PeoplesController@update');
+Route::delete('peoples/{peoples}', 'PeoplesController@destroy');
+
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
