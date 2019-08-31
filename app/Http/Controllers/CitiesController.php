@@ -33,7 +33,6 @@ class CitiesController extends Controller
         $citie = Cities::findOrFail($id);
         $citie->update($request->all());
         $citie->save();
-
         return $citie;
     }
 
