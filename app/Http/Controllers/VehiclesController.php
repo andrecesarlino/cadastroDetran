@@ -16,4 +16,30 @@ class VehiclesController extends Controller
     {
         return Vehicle::create($request->all());
     }
+
+    public function show($id)
+    {
+        return Vehicle::find($id);
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update(Request $request, $id)
+    {
+        
+        $vehicle = Vehicle::findOrFail($id);
+        $vehicle->update($request->all());
+        $vehicle->save();
+        return $vehicle;
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $vehicle = Peoples::findOrFail($id);
+        $vehicle->delete();
+        return 204;
+    }
 }
