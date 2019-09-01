@@ -35,6 +35,13 @@ Route::post('peoples', 'PeoplesController@store');
 Route::put('peoples/{peoples}', 'PeoplesController@update');
 Route::delete('peoples/{peoples}', 'PeoplesController@destroy');
 
+//Vehicle
+Route::get('vehicles', 'VehiclesController@index');
+Route::get('vehicles/{vehicles}', 'VehiclesController@show');
+Route::post('vehicles', 'VehiclesController@store');
+Route::put('vehicles/{vehicles}', 'VehiclesController@update');
+Route::delete('vehicles/{vehicles}', 'VehiclesController@destroy');
+
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
