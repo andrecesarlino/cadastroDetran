@@ -13,7 +13,7 @@ class CreateTrafficTable extends Migration
      */
     public function up()
     {
-        Schema::create('traffics', function (Blueprint $table) {
+        Schema::create('traffic', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedbigInteger('id_vehicle');
             $table->foreign('id_vehicle')->references('id')->on('vehicles');

@@ -38,7 +38,7 @@ class VehiclesController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $vehicle = Peoples::findOrFail($id);
+        $vehicle = Vehicle::findOrFail($id);
         $vehicle->delete();
         return 204;
     }

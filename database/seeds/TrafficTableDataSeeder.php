@@ -15,7 +15,7 @@ class TrafficTableDataSeeder extends Seeder
         $faker = Faker::create('App\Traffic');
 
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('traffics')->insert([
+            DB::table('traffic')->insert([
                 'id_vehicle'=>$i,
                 'valor'=> $faker->randomFloat,
                 'prazo' => $faker->dateTime(),
