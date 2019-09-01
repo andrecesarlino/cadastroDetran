@@ -15,11 +15,7 @@ use App\State;
 */
 
 //States
-Route::get('states', 'StateController@index');
-Route::get('states/{state}', 'StateController@show');
-Route::post('states', 'StateController@store');
-Route::put('states/{state}', 'StateController@update');
-Route::delete('states/{state}', 'StateController@destroy');
+
 
 //Cities
 Route::get('cities', 'CitiesController@index');
@@ -50,7 +46,17 @@ Route::put('traffics/{traffics}', 'TrafficsController@update');
 Route::delete('traffics/{traffics}', 'TrafficsController@destroy');
 
 Route::post('register', 'Auth\RegisterController@register');
+Route::post('logout', 'Auth\LoginController@logout');
 
+Route::group(['middleware' => 'auth:api'], function() {
+
+    Route::get('states', 'StateController@index');
+    Route::get('states/{state}', 'StateController@show');
+    Route::post('states', 'StateController@store');
+    Route::put('states/{state}', 'StateController@update');
+    Route::delete('states/{state}', 'StateController@destroy');
+
+});
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
