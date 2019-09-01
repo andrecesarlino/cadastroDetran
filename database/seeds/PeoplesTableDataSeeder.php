@@ -15,10 +15,10 @@ class PeoplesTableDataSeeder extends Seeder
         $faker = Faker::create('App\Peoples');
         for ($i = 1; $i <= 10; $i++) {
             DB::table('peoples')->insert([
-                'nome' => $faker->sentence(),
+                'nome' => $faker->name,
                 'cpfcnpj'=>$faker->randomNumber,
                 'endereco'=>$faker->sentence(),
-                'telefone'=>$faker->randomNumber,
+                'telefone'=>$faker->NumberBetween(1,99),
                 'celular'=>$faker->randomNumber,
                 'id_citie'=>$i,
                 'created_at' => \Carbon\Carbon::now(),

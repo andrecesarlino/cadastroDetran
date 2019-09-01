@@ -42,6 +42,13 @@ Route::post('vehicles', 'VehiclesController@store');
 Route::put('vehicles/{vehicles}', 'VehiclesController@update');
 Route::delete('vehicles/{vehicles}', 'VehiclesController@destroy');
 
+//Traffics
+Route::get('traffics', 'TrafficsController@index');
+Route::get('traffics/{traffics}', 'TrafficsController@show');
+Route::post('traffics', 'TrafficsController@store');
+Route::put('traffics/{traffics}', 'TrafficsController@update');
+Route::delete('traffics/{traffics}', 'TrafficsController@destroy');
+
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();

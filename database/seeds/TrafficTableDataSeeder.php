@@ -3,7 +3,7 @@
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
-class StatesTableSeeder extends Seeder
+class TrafficTableDataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,12 +12,14 @@ class StatesTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('App\State');
+        $faker = Faker::create('App\Traffic');
 
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('states')->insert([
-                'nome' => $faker->name,
-                'uf' => $faker->word,
+            DB::table('traffics')->insert([
+                'id_vehicle'=>$i,
+                'valor'=> $faker->randomFloat,
+                'prazo' => $faker->dateTime(),
+                'status' => $faker->randomNumber,
                 'created_at' => \Carbon\Carbon::now(),
                 'Updated_at' => \Carbon\Carbon::now(),
             ]);
