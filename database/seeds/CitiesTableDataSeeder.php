@@ -15,6 +15,7 @@ class CitiesTableDataSeeder extends Seeder
         $faker = Faker::create('App\Cities');
         for ($i = 1; $i <= 10; $i++) {
             DB::table('cities')->insert([
+                'id_state'=>$i,
                 'nome' => $faker->sentence(),
                 'created_at' => \Carbon\Carbon::now(),
                 'Updated_at' => \Carbon\Carbon::now(),

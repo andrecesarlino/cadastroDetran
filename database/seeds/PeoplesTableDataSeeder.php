@@ -20,6 +20,7 @@ class PeoplesTableDataSeeder extends Seeder
                 'endereco'=>$faker->sentence(),
                 'telefone'=>$faker->randomNumber,
                 'celular'=>$faker->randomNumber,
+                'id_citie'=>$i,
                 'created_at' => \Carbon\Carbon::now(),
                 'Updated_at' => \Carbon\Carbon::now(),
             ]);

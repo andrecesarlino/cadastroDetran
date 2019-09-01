@@ -20,6 +20,8 @@ class CreatePeoplesTable extends Migration
             $table->string('endereco',150);
             $table->integer('telefone');
             $table->integer('celular');
+            $table->unsignedbigInteger('id_citie');
+            $table->foreign('id_citie')->references('id')->on('cities');
             $table->timestamps();
         });
     }
