@@ -33,23 +33,16 @@ class StateController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, State $state)
     {
-//        $state = State::findOrFail($id);
-//        $state->update($request->all());
-//        return $state;
-
-        $state = State::findOrFail($id);
         $state->update($request->all());
-        $state->save();
-
-        return $state;
+        return response()->json($state);
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy(State $state)
     {
-        $states = State::findOrFail($id);
-        $states->delete();
-        return 204;
+        $state->delete();
+        return response()->json(null, 204);
+
     }
 }

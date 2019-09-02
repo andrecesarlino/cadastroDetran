@@ -7,7 +7,6 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -20,16 +19,13 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validateLogin($request);
-
         if ($this->attemptLogin($request)) {
             $user = $this->guard()->user();
             $user->generateToken();
-
             return response()->json([
                 'data' => $user->toArray(),
             ]);
         }
-
         return $this->sendFailedLoginResponse($request);
     }
     public function logout(Request $request)

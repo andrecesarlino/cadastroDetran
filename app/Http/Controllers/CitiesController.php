@@ -27,9 +27,9 @@ class CitiesController extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    /*public function update(Request $request, $id)
     {
-        
+
         $citie = Cities::findOrFail($id);
         $citie->update($request->all());
         $citie->save();
@@ -41,5 +41,18 @@ class CitiesController extends Controller
         $citie = Cities::findOrFail($id);
         $citie->delete();
         return 204;
+    }*/
+
+    public function update(Request $request, Cities $city)
+    {
+        $city->update($request->all());
+        return response()->json($city);
+    }
+
+    public function destroy(Cities $city)
+    {
+        $city->delete();
+        return response()->json(null, 204);
+
     }
 }
