@@ -32,11 +32,11 @@ Route::put('people/{person}', 'PersonController@update');
 Route::delete('people/{person}', 'PersonController@destroy');
 
 //Vehicle
-Route::get('vehicles', 'VehiclesController@index');
-Route::get('vehicles/{vehicles}', 'VehiclesController@show');
-Route::post('vehicles', 'VehiclesController@store');
-Route::put('vehicles/{vehicles}', 'VehiclesController@update');
-Route::delete('vehicles/{vehicles}', 'VehiclesController@destroy');
+Route::get('vehicles', 'VehicleController@index');
+Route::get('vehicles/{vehicle}', 'VehicleController@show');
+Route::post('vehicles', 'VehicleController@store');
+Route::put('vehicles/{vehicle}', 'VehicleController@update');
+Route::delete('vehicles/{vehicle}', 'VehicleController@destroy');
 
 //Traffics
 Route::get('traffics', 'TrafficsController@index');
