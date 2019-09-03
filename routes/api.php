@@ -39,11 +39,11 @@ Route::put('vehicles/{vehicle}', 'VehicleController@update');
 Route::delete('vehicles/{vehicle}', 'VehicleController@destroy');
 
 //Traffics
-Route::get('traffics', 'TrafficsController@index');
-Route::get('traffics/{traffics}', 'TrafficsController@show');
-Route::post('traffics', 'TrafficsController@store');
-Route::put('traffics/{traffics}', 'TrafficsController@update');
-Route::delete('traffics/{traffics}', 'TrafficsController@destroy');
+Route::get('traffics', 'TrafficController@index');
+Route::get('traffics/{traffic}', 'TrafficController@show');
+Route::post('traffics', 'TrafficController@store');
+Route::put('traffics/{traffic}', 'TrafficController@update');
+Route::delete('traffics/{traffic}', 'TrafficController@destroy');
 
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
