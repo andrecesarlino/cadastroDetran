@@ -12,12 +12,6 @@ class StateController extends Controller
     {
         return State::all();
     }
-
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         return State::create($request->all());
@@ -26,11 +20,6 @@ class StateController extends Controller
     public function show($id)
     {
         return State::find($id);
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(Request $request, State $state)
