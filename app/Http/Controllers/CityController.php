@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\State;
 use Illuminate\Http\Request;
+use App\City;
 
-
-class StateController extends Controller
+class CityController extends Controller
 {
     public function index()
     {
-        return State::all();
+        return City::all();
     }
 
     public function create()
@@ -20,12 +19,12 @@ class StateController extends Controller
 
     public function store(Request $request)
     {
-        return State::create($request->all());
+        return City::create($request->all());
     }
 
     public function show($id)
     {
-        return State::find($id);
+        return City::find($id);
     }
 
     public function edit($id)
@@ -33,15 +32,15 @@ class StateController extends Controller
         //
     }
 
-    public function update(Request $request, State $state)
+    public function update(Request $request, City $city)
     {
-        $state->update($request->all());
-        return $state;
+        $city->update($request->all());
+        return $city;
     }
 
-    public function destroy(State $state)
+    public function destroy(City $city)
     {
-        $state->delete();
+        $city->delete();
         return response()->json(null, 204);
 
     }

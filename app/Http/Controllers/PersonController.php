@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\State;
 use Illuminate\Http\Request;
+use App\Person;
 
-
-class StateController extends Controller
+class PersonController extends Controller
 {
     public function index()
     {
-        return State::all();
+        return Person::all();
     }
 
     public function create()
@@ -20,12 +19,12 @@ class StateController extends Controller
 
     public function store(Request $request)
     {
-        return State::create($request->all());
+        return Person::create($request->all());
     }
 
     public function show($id)
     {
-        return State::find($id);
+        return Person::find($id);
     }
 
     public function edit($id)
@@ -33,15 +32,15 @@ class StateController extends Controller
         //
     }
 
-    public function update(Request $request, State $state)
+    public function update(Request $request, Person $person)
     {
-        $state->update($request->all());
-        return $state;
+        $person->update($request->all());
+        return $person;
     }
 
-    public function destroy(State $state)
+    public function destroy(Person $person)
     {
-        $state->delete();
+        $person->delete();
         return response()->json(null, 204);
 
     }

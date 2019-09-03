@@ -3,7 +3,7 @@
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
-class CitiesTableDataSeeder extends Seeder
+class CitiesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class CitiesTableDataSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('App\Cities');
+        $faker = Faker::create('App\City');
         for ($i = 1; $i <= 10; $i++) {
             DB::table('cities')->insert([
                 'id_state'=>$i,

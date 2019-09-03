@@ -18,18 +18,18 @@ use App\State;
 
 
 //Cities
-Route::get('cities', 'CitiesController@index');
-Route::get('cities/{cities}', 'CitiesController@show');
-Route::post('cities', 'CitiesController@store');
-Route::put('cities/{cities}', 'CitiesController@update');
-Route::delete('cities/{cities}', 'CitiesController@destroy');
+Route::get('cities', 'CityController@index');
+Route::get('cities/{city}', 'CityController@show');
+Route::post('cities', 'CityController@store');
+Route::put('cities/{city}', 'CityController@update');
+Route::delete('cities/{city}', 'CityController@destroy');
 
 //Peoples
-Route::get('peoples', 'PeoplesController@index');
-Route::get('peoples/{peoples}', 'PeoplesController@show');
-Route::post('peoples', 'PeoplesController@store');
-Route::put('peoples/{peoples}', 'PeoplesController@update');
-Route::delete('peoples/{peoples}', 'PeoplesController@destroy');
+Route::get('people', 'PersonController@index');
+Route::get('people/{person}', 'PersonController@show');
+Route::post('people', 'PersonController@store');
+Route::put('people/{person}', 'PersonController@update');
+Route::delete('people/{person}', 'PersonController@destroy');
 
 //Vehicle
 Route::get('vehicles', 'VehiclesController@index');

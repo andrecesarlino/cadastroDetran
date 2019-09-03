@@ -13,7 +13,6 @@ class StatesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('App\State');
-
         for ($i = 1; $i <= 10; $i++) {
             DB::table('states')->insert([
                 'nome' => $faker->name,
